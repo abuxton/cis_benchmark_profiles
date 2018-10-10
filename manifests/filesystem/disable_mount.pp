@@ -14,7 +14,8 @@ define cis_benchmark_profiles::filesystem::disable_mount(
   file_line { "(${benchmark}) ${file} - ${filesystem}":
     ensure  => present,
     path    => $file,
-    line    => 'install cramfs /bin/true',
+    line    => "install ${filesystem} /bin/true",
     require => File[$file],
+    tags    => $benchmark,
   }
 } #EOF

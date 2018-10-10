@@ -16,7 +16,7 @@
 #   include cis_benchmark_profiles::filesystem
 #
 class cis_benchmark_profiles::filesystem {
-  $file = '/etc/modprobe.d/CIS.conf'
+  $file = 'CIS.conf'
 
   file { '/etc/modprobe.d':
     ensure => directory,
@@ -25,7 +25,7 @@ class cis_benchmark_profiles::filesystem {
     group  => 'root',
   }
 
-  file { $file :
+  file { "/etc/modprobe.d/${file}" :
     ensure  => file,
     mode    => '0600',
     owner   => 'root',
