@@ -1,6 +1,6 @@
 # A description of what this defined type does
 #
-# @summary a defined type for reusability to disable file system mounts as cis 1.1.*
+# @summary a defined type for reusability to disable file system mounts as cis 1.1.1.*
 #
 # @example
 #   cis_benchmark_profiles::filesystem::disable_mount { 'namevar': }
