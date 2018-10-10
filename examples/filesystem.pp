@@ -9,4 +9,4 @@
 # 1.1.1.7
 # 1.1.1.8
 #
-inlcude cis_benchmark_profiles::filesystem
+include cis_benchmark_profiles::filesystem
