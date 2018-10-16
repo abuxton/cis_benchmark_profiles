@@ -1,3 +1,4 @@
+# @summary 
 # Create /etc/modprobe.d and /etc/modeprobe.d/CIS.conf
 # required by
 # 1.1.1.1
@@ -8,9 +9,6 @@
 # 1.1.1.6
 # 1.1.1.7
 # 1.1.1.8
-
-# @summary A short summary of the purpose of this class
-# Create /etc/modprobe.d and /etc/modeprobe.d/CIS.conf
 #
 # @example
 #   include cis_benchmark_profiles::filesystem
