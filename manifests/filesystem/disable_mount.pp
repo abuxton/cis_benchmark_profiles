@@ -5,17 +5,17 @@
 # @example
 #   cis_benchmark_profiles::filesystem::disable_mount { 'namevar': }
 define cis_benchmark_profiles::filesystem::disable_mount(
-  String $benchmark
-  String $filesystem = $title,
+  Pattern[/[1]\W[1]\W[1]\W[0-9]/] $benchmark,
+  String                          $filesystem = $title,
 ) {
   include cis_benchmark_profiles::filesystem
-  $file = $::cis_benchmarks_profile::filesystem::file
+  $file = "/etc/modprobe.d/${::cis_benchmark_profiles::filesystem::file}"
 
   file_line { "(${benchmark}) ${file} - ${filesystem}":
     ensure  => present,
     path    => $file,
     line    => "install ${filesystem} /bin/true",
     require => File[$file],
-    tags    => $benchmark,
+    tag    => $benchmark,
   }
 } #EOF
